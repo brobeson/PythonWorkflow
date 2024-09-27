@@ -1,0 +1,11 @@
+name: Python
+on:
+  workflow_call:
+
+jobs:
+  dotFiles:
+    name: Dot File Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repository
+        uses: actions/checkout@v4

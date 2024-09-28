@@ -1,6 +1,6 @@
 # Python Workflow
 
-[![Workflow Quality](https://github.com/brobeson/PythonWorkflow/actions/workflows/support_files.yaml/badge.svg)](https://github.com/brobeson/PythonWorkflow/actions/workflows/support_files.yaml)
+[![Workflow Quality](https://github.com/brobeson/PythonWorkflow/actions/workflows/workflow_quality.yaml/badge.svg)](https://github.com/brobeson/PythonWorkflow/actions/workflows/workflow_quality.yaml)
 [![GitHub Release](https://img.shields.io/github/v/release/brobeson/PythonWorkflow?sort=semver&logo=github&label=Release)](https://github.com/brobeson/PythonWorkflow/releases/latest)
 
 This is a reusable workflow to ensure quality Python code.
@@ -22,13 +22,10 @@ jobs:
 
 The workflow runs the steps described in the following sections.
 
-<!-- 1. **Spell Check**
-   The workflow runs [CSpell](https://cspell.org/) on all files in the repository except your _.git/_ directory.
-   Use a [CSpell configuration](https://cspell.org/configuration/) in your repository to control the spell check behavior.
-   You can add CSpell to your IDE to reduce the probability of this step finding errors.
-   If you use [VS Code](https://code.visualstudio.com/), you can use the [Code Spell Checker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
-1. **Markdown Lint**
-   The workflow also runs [Markdownlint](https://github.com/DavidAnson/markdownlint) on all Markdown files in the repository. -->
+1. **Format Check**
+   The workflow runs [Black](https://black.readthedocs.io/en/stable/index.html) on all Python files in the repository.
+   Use a [configuration file](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) in your repository to control how Black formats your code.
+   The workflow reports mis-formatted files; it does not modify any files.
 
 ## Issue Tracking
 

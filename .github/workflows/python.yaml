@@ -3,9 +3,13 @@ on:
   workflow_call:
 
 jobs:
-  dotFiles:
-    name: Dot File Quality
+  python:
+    name: Python
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
         uses: actions/checkout@v4
+      - name: Check formatting
+        uses: psf/black@stable
+        with:
+          options: "--check"

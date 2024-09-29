@@ -29,6 +29,9 @@ The workflow runs the steps described in the following sections.
 1. **PyLint**  
    The workflow runs [PyLint](https://pylint.pycqa.org/en/latest/index.html) on all Python files in the repository.
    Use a [configuration file](https://pylint.pycqa.org/en/latest/user_guide/usage/run.html#command-line-options) in your repository to control PyLint runs.
+1. **MyPy**  
+   The workflow runs [MyPy](https://mypy.readthedocs.io/en/stable/index.html) on all Python files in the repository.
+   Use a [configuration file](https://mypy.readthedocs.io/en/stable/config_file.html) in your repository to control MyPy runs.
 
 ## Issue Tracking
 

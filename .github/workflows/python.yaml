@@ -4,11 +4,11 @@ on:
 
 jobs:
   python:
-    name: Python
+    name: Static Analysis
     runs-on: ubuntu-latest
     steps:
       - name: Install tools
-        run: pip3 install pylint
+        run: pip3 install mypy pylint
       - name: Clone the repository
         uses: actions/checkout@v4
       - name: Check formatting
@@ -17,9 +17,5 @@ jobs:
           options: "--check"
       - name: Run PyLint
         run: pylint . --msg-template="::error file={path},line={line},col={column},title={category}::({symbol}) {msg}"
-      - run: |
-          {
-            echo "| Pass/Fail | Step |"
-            echo "| :-: | :-- |"
-            echo "| :heavy_check_mark: | PyLint |"
-          } >>"${GITHUB_STEP_SUMMARY}"
+      - name: Run MyPy
+        run: mypy .

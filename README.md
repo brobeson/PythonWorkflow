@@ -32,6 +32,9 @@ The workflow runs the steps described in the following sections.
 1. **MyPy**  
    The workflow runs [MyPy](https://mypy.readthedocs.io/en/stable/index.html) on all Python files in the repository.
    Use a [configuration file](https://mypy.readthedocs.io/en/stable/config_file.html) in your repository to control MyPy runs.
+1. **isort**  
+   The workflow runs [isort](https://pycqa.github.io/isort/index.html) on all Python files in the repository.
+   Use a [configuration file](https://pycqa.github.io/isort/docs/configuration/config_files.html) in your repository to control isort runs.
 
 ## Issue Tracking
 

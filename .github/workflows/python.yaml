@@ -19,3 +19,5 @@ jobs:
         run: pylint . --msg-template="::error file={path},line={line},col={column},title={category}::({symbol}) {msg}"
       - name: Run MyPy
         run: mypy .
+      - name: Run isort
+        uses: isort/isort-action@v1

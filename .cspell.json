@@ -1,4 +1,4 @@
 {
   "version": "0.2",
-  "words": ["brobeson", "mypy", "pylint"]
+  "words": ["brobeson", "isort", "mypy", "pylint"]
 }

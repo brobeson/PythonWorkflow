@@ -7,9 +7,19 @@ jobs:
     name: Python
     runs-on: ubuntu-latest
     steps:
+      - name: Install tools
+        run: pip3 install pylint
       - name: Clone the repository
         uses: actions/checkout@v4
       - name: Check formatting
         uses: psf/black@stable
         with:
           options: "--check"
+      - name: Run PyLint
+        run: pylint . --msg-template="::error file={path},line={line},col={column},title={category}::({symbol}) {msg}"
+      - run: |
+          {
+            echo "| Pass/Fail | Step |"
+            echo "| :-: | :-- |"
+            echo "| :heavy_check_mark: | PyLint |"
+          } >>"${GITHUB_STEP_SUMMARY}"

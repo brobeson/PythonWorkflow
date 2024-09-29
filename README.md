@@ -26,6 +26,9 @@ The workflow runs the steps described in the following sections.
    The workflow runs [Black](https://black.readthedocs.io/en/stable/index.html) on all Python files in the repository.
    Use a [configuration file](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) in your repository to control how Black formats your code.
    The workflow reports mis-formatted files; it does not modify any files.
+1. **PyLint**  
+   The workflow runs [PyLint](https://pylint.pycqa.org/en/latest/index.html) on all Python files in the repository.
+   Use a [configuration file](https://pylint.pycqa.org/en/latest/user_guide/usage/run.html#command-line-options) in your repository to control PyLint runs.
 
 ## Issue Tracking
 

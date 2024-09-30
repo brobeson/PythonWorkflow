@@ -20,21 +20,33 @@ jobs:
 
 ## Steps
 
-The workflow runs the steps described in the following sections.
+The workflow has two jobs: Static Analysis and Test.
+
+### Static Analysis
+
+The Static Analysis job runs the steps described in the following sections.
 
 1. **Format Check**
-   The workflow runs [Black](https://black.readthedocs.io/en/stable/index.html) on all Python files in the repository.
+   The job runs [Black](https://black.readthedocs.io/en/stable/index.html) on all Python files in the repository.
    Use a [configuration file](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file) in your repository to control how Black formats your code.
-   The workflow reports mis-formatted files; it does not modify any files.
+   The job reports mis-formatted files; it does not modify any files.
 1. **PyLint**  
-   The workflow runs [PyLint](https://pylint.pycqa.org/en/latest/index.html) on all Python files in the repository.
+   The job runs [PyLint](https://pylint.pycqa.org/en/latest/index.html) on all Python files in the repository.
    Use a [configuration file](https://pylint.pycqa.org/en/latest/user_guide/usage/run.html#command-line-options) in your repository to control PyLint runs.
 1. **MyPy**  
-   The workflow runs [MyPy](https://mypy.readthedocs.io/en/stable/index.html) on all Python files in the repository.
+   The job runs [MyPy](https://mypy.readthedocs.io/en/stable/index.html) on all Python files in the repository.
    Use a [configuration file](https://mypy.readthedocs.io/en/stable/config_file.html) in your repository to control MyPy runs.
 1. **isort**  
-   The workflow runs [isort](https://pycqa.github.io/isort/index.html) on all Python files in the repository.
+   The job runs [isort](https://pycqa.github.io/isort/index.html) on all Python files in the repository.
    Use a [configuration file](https://pycqa.github.io/isort/docs/configuration/config_files.html) in your repository to control isort runs.
+
+### Test
+
+The Test job runs tests on multiple platforms, with multiple versions of Python.
+
+1. **Run Tests**  
+   The job runs [pytest](https://docs.pytest.org/en/stable/index.html).
+   This step assumes your tests follow default pytest conventions, or you [configured pytest](https://docs.pytest.org/en/stable/reference/customize.html) in your repository.
 
 ## Issue Tracking
 

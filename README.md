@@ -47,6 +47,9 @@ The Test job runs tests on multiple platforms, with multiple versions of Python.
 1. **Run Tests**  
    The job runs [pytest](https://docs.pytest.org/en/stable/index.html).
    This step assumes your tests follow default pytest conventions, or you [configured pytest](https://docs.pytest.org/en/stable/reference/customize.html) in your repository.
+1. **Report Test Coverage**  
+   After running tests, the job uploads coverage data to [Coveralls](https://coveralls.io).
+   It uploads a separate report for each cell in the test matrix (OS / Python combination).
 
 ## Issue Tracking
 

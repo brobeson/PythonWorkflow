@@ -1,14 +1,15 @@
+# cspell:words doctree doctrees nitpicky
 name: Python
 on:
   workflow_call:
 
 jobs:
-  python:
+  staticAnalysis:
     name: Static Analysis
     runs-on: ubuntu-latest
     steps:
       - name: Install tools
-        run: pip3 install mypy pylint
+        run: pip3 install mypy pylint sphinx
       - name: Clone the repository
         uses: actions/checkout@v4
       - name: Check formatting
@@ -21,7 +22,12 @@ jobs:
         run: mypy .
       - name: Run isort
         uses: isort/isort-action@v1
-  build:
+      - name: Build docs
+        working-directory: docs
+        run: |
+          pip3 install -r ../requirements.txt
+          sphinx-build --fail-on-warning --builder html --doctree-dir build/doctrees --jobs auto --nitpicky .  build/html
+  test:
     name: Test
     runs-on: ${{matrix.os}}
     strategy:

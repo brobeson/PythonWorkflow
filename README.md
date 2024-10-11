@@ -39,6 +39,8 @@ The Static Analysis job runs the steps described in the following sections.
 1. **isort**  
    The job runs [isort](https://pycqa.github.io/isort/index.html) on all Python files in the repository.
    Use a [configuration file](https://pycqa.github.io/isort/docs/configuration/config_files.html) in your repository to control isort runs.
+1. **Build Docs**  
+   The job runs [Sphinx](https://www.sphinx-doc.org/en/master) in the _docs/_ directory to ensure documentation builds without issues.
 
 ### Test
 

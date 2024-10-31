@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install tools
-        run: pip3 install mypy pylint sphinx
+        run: pip3 install mypy pylint pytest sphinx
       - name: Clone the repository
         uses: actions/checkout@v4
       - name: Check formatting
